@@ -27,7 +27,7 @@ public class ardControl : MonoBehaviour {
     {
         //serialController.SendSerialMessage("a");
         string message = serialController.ReadSerialMessage();
-        Debug.Log(message);
+        //Debug.Log(message);
 
 		if (message == null) {
 			return;
