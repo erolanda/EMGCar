@@ -29,17 +29,20 @@ public class ardControl : MonoBehaviour {
         string message = serialController.ReadSerialMessage();
         Debug.Log(message);
 
-        if (message == null)
-            return;
+		if (message == null) {
+			return;
+		}
         else
         {
             float value = 0;
             if(float.TryParse(message, out value))
             {
-                if (value == 0f)
-                    m_Car.Move(0.5f, 0.4f, 0.3f, 0f);
-                else if (value == 1f)
-                    m_Car.Move(-0.5f, 0.4f, 0.3f, 0f);
+				if (value == 0f)
+					m_Car.Move (0.5f, 0.20f, 0.20f, 0f);
+				else if (value == 1f)
+					m_Car.Move (0f, 0.50f, 0.50f, 0f);
+				else if (value == 2f)
+					m_Car.Move (-0.5f, 0.20f, 0.20f, 0f);
             }
         }
     }
