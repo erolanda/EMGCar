@@ -9,12 +9,10 @@ public class timer : MonoBehaviour {
     private float time;
 	public Text text_timer;
 	public Text text_fin;
-	// Use this for initialization
-	void Start () {
-		
-	}
 
-    // Update is called once per frame
+    // Creación del timer
+	// Se obtienen los minutos y segundos y se les aplica un formato 00:00
+	// Se muestra en pantall el tiempo mediante la variable text_timer
     void Update () {
         if(start_timer){
             time += Time.deltaTime;
@@ -25,6 +23,9 @@ public class timer : MonoBehaviour {
         }
     }
 
+	// Iniciar o detener el timer
+	// Inicializar el timer cuando el coche colisione con la marca de Inicio
+	// Detener el timer cuando el coche colisione con la marca de fin
 	void OnTriggerEnter(Collider other) {
 		if (other.CompareTag ("Inicio")) {
 			start_timer = true;
@@ -34,6 +35,7 @@ public class timer : MonoBehaviour {
 		}
 	}
 
+	// Mostrar mensaje de fin de juego.
 	void finJuego(){
 		string msj = "Felicidades has completado la pista en : " + text_timer.text;
 		text_fin.text = msj;

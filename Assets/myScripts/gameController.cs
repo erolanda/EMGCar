@@ -10,7 +10,7 @@ public class gameController : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
+	// Recargar la escena cuando el usuario presione la tecla R
 	void Update(){
 		if (Input.GetKeyDown (KeyCode.R)) {
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

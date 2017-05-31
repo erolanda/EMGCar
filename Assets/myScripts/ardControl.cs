@@ -7,25 +7,16 @@ public class ardControl : MonoBehaviour {
     private CarController m_Car;
     public SerialController serialController;
 
+	//Referencia al controlador del coche.
     private void Awake()
     {
-        // get the car controller
         m_Car = GetComponent<CarController>();
     }
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+	//Realiza una lectura del puerto serial, de acuerdo al valor recibido
+	//se elige un movimiento para el coche.
     private void FixedUpdate()
     {
-        //serialController.SendSerialMessage("a");
         string message = serialController.ReadSerialMessage();
         //Debug.Log(message);
 
